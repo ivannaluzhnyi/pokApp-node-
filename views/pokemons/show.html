@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{%block content%}
+<div class="row">
+    <div class="col-sm-3">
+        <img src="/uploads/{{pokemon.picture}}" alt="{{pokemon.name}}" style="width: 100%">
+    </div>
+    <div class="col-sm-9">
+        <h2>{{pokemon.name}} <small>Pokemon n°{{pokemon.number}}</small></h2>
+        <p class="lead">
+            {{pokemon.description}}
+        </p>
+        <h3> Types :  </h3>
+        {% for t in pokemon.types %}
+        <span style="background-color : {{t.color}}" class="label label-default">{{t.name}}</span>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
